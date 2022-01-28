@@ -12,7 +12,7 @@ import streamlit as st
     # Loading the model
     # creating the funtion for webapp
 def price_pred(input_data):
-    loaded_model = pickle.load(open('C:/Users/alishayzadag/Documents/mcs_fyp_2021/streamlit/trained_model2.sav', 'rb'))
+    loaded_model = pickle.load(open('https://github.com/balochx/mcs_fyp_2021/trained_model2.sav', 'rb'))
     input_data_as = np.array([input_data])
     input_data_reshaped = input_data_as.reshape(1,-1)
     result = loaded_model.predict(input_data_reshaped)
