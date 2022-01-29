@@ -16,8 +16,8 @@ st.set_page_config(
      layout="centered",
      initial_sidebar_state="expanded",
      menu_items={
-         'Get Help': 'contact: alishayzadag@gmail.com',
-         'Report a bug': "email: alishayzadag@gmail.com",
+         'Get Help': 'https://pk.linkedin.com/in/balochx',
+         'Report a bug': "https://pk.linkedin.com/in/balochx",
          'About': "# An app from the students of University of Karachi"
      }
  )
