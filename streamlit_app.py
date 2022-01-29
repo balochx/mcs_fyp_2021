@@ -8,6 +8,28 @@ Created on Thu Jan 27 22:38:42 2022
 import numpy as np
 import pickle
 import streamlit as st
+from PIL import Image
+
+st.set_page_config(
+     page_title="Pandas Real Estates' App",
+     page_icon="🧊",
+     layout="centered",
+     initial_sidebar_state="expanded",
+     menu_items={
+         'Get Help': 'https://www.extremelycoolapp.com/help',
+         'Report a bug': "https://www.extremelycoolapp.com/bug",
+         'About': "# This is a header. This is an *extremely* cool app!"
+     }
+ )
+
+st.sidebar.title('Pandas Real Estates Ltd.')
+st.sidebar.write("Hello there! :smile:")
+st.sidebar.caption('Created by')
+
+image = Image.open('pandas_real.jpg')
+
+st.image(image, caption=None, width=500, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.caption('Image by Francesca Tosolini')
 
     # Loading the model
     # creating the funtion for webapp
@@ -20,10 +42,12 @@ def price_pred(input_data):
 
 
 def main():
-
     
-    st.title('Pandas Real Estates')
-    st.write('Welcome to Pandas Real Estates')
+    st.header('Pandas Real Estates App')
+    
+    st.subheader('Welcome to Pandas Real Estates')
+    st.markdown('**We are commited to provide our clients the best possible value for their assets.**')
+    st.markdown("You are very close to selling your house at a perfect value. This app will give you the recommended price for your real estate. Just enter the data given by Pandas Real Estate below. ")
 
     CRIM = st.number_input('Enter CRIM your value')
     ZN = st.number_input('Enter ZN value')
@@ -47,7 +71,9 @@ def main():
             
             final_result = price_pred([CRIM, ZN, INDUS, CHAS, NOX, RM, AGE, DIS, RAD, TAX, PTRATIO, B, LSTAT])
                 
+            st.write('Recommended value for this house (in thousands(USD)):')
             st.success(final_result)
+            st.balloons()
         
 if __name__ == "__main__":
     main()
