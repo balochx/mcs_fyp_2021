@@ -23,8 +23,7 @@ st.set_page_config(
  )
 
 st.sidebar.title('Pandas Real Estates Ltd.')
-st.sidebar.write("Hello, there! :smile:  
-                 Welcome to Pandas Real Estates!")
+st.sidebar.write("Hello, there! :smile:")
 
 st.sidebar.caption('Created by the UBIT folks!')
 
